@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h2>User Dashboard</h2>
+    <p>Success! You are logged into your private dashboard.</p>
+    
+    <div style="background: #f4f4f4; padding: 15px; border-radius: 5px;">
+        <h3>Your Profile Details:</h3>
+        <ul>
+            <li><strong>Username:</strong> {{ user.username }}</li>
+            <li><strong>Email:</strong> {{ user.email|default:"No email provided" }}</li>
+            <li><strong>Date Joined:</strong> {{ user.date_joined|date:"F j, Y" }}</li>
+        </ul>
+    </div>
+{% endblock %}
